@@ -64,7 +64,7 @@ experimental-features = nix-command flakes
 
 We recommend cloning the config into /etc/nixos/my-config:
 ```bash
-git clone <repository-url> /etc/nixos/my-config
+git clone https://github.com/franiekidos/.nixdota /etc/nixos/my-config
 cd /etc/nixos/my-config
 ```
 ## 3. Customize the Flake
