@@ -33,10 +33,15 @@ Pomodoro timer ($mod+T).
 # Credits
 
  Massive props to:
+ 
  BryceWalkerDev - the GTK Theme
+ 
  [Check Him out](https://github.com/brycewalkerdev/catppuccin-gtk)
+ 
  The Catppuccin Community - the entire color scheme
+ 
  [Check them out](https://github.com/catppuccin)
+ 
  and yall
 
 
@@ -84,30 +89,33 @@ nixosConfigurations = {
 };
 ```
 
-4. Configure Private Paths
+## 4. Configure Private Paths
 
 This setup uses a non-public file to define local paths for things like wallpapers, which you shouldn't commit to GitHub.
 
 Create the secrets/paths.nix file:
-
+```bash
 mkdir -p secrets
 nano secrets/paths.nix
-
+```
 
 Paste the following content, making sure to adjust the path to your local wallpaper directory:
 
+```nix
 {
   wallpaperDir = "/home/your-username/Pictures/Wallpapers"; # ADJUST THIS PATH
 }
-
+```
 
 Crucial Security Note: Ensure the secrets directory is listed in your .gitignore to prevent committing sensitive local paths.
 
-5. Build and Apply
+## 5. Build and Apply
 
 Run the nixos-rebuild switch command to build the new system and apply the Home Manager configuration:
 
 # Example command - replace 'my-config' and 'my-hostname' as needed
+```bash
 sudo nixos-rebuild switch --flake /etc/nixos/my-config#my-hostname
+```
 
 After the build finishes successfully, log out and log back in to fully activate the new Hyprland session, Waybar, and the robust Hyprpaper startup.
